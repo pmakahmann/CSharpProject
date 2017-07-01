@@ -13,18 +13,26 @@ namespace CSharpProject.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Browse()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Browse the Daylily Database.";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Please feel free to contact me.  The Daylily site is still a work in progress, and your insight would be beneficial.";
 
             return View();
         }
+
+        public ActionResult AddDaylily()
+        {
+            ViewBag.Message = "Add a Daylily";
+
+            return View();
+        }
+
     }
 }
