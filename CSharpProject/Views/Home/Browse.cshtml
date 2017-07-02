@@ -2,6 +2,42 @@
     ViewBag.Title = "Browse";
 }
 <h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+
+@*Use this table from FitnessFrog app to design the entries page.  Be careful that in the FitFrog app, this is on the Index page, but here it is on the Browse page.*@
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Primary Color</th>
+        <th>Secondary Color</th>
+        <th class="hidden-xs">Bloom Season</th>
+        <th class="hidden-sm hidden-xs">Tetraploid</th>
+        <th>Height (inches)</th>
+        <th class="hidden-xs">Bloom Size</th>
+        <th class="hidden-sm hidden-xs">Reblooms</th>
+        <th>&nbsp;</th>
+    @*</tr>
+    @foreach (var entry in Model)
+    {
+        <tr>
+            <td>
+                <span class="hidden-xs">@entry.Date.ToString("MM/dd/yyyy")</span>
+                <span class="hidden-sm hidden-md hidden-lg">@entry.Date.ToString("MM/dd")</span>
+            </td>
+            <td>@entry.Activity.Name</td>
+            <td>@entry.Duration.ToString("0.0#")</td>
+            <td class="hidden-xs">@entry.Intensity</td>
+            <td>
+                <div class="pull-right">
+                    <a href="@Url.Action("Edit", new { id = entry.Id })" class="btn btn-warning btn-sm margin-right">
+                        <span class="glyphicon glyphicon-edit"></span><span class="hidden-xs"> Edit</span>
+                    </a>
+                    <a href="@Url.Action("Delete", new { id = entry.Id })" class="btn btn-danger btn-sm">
+                        <span class="glyphicon glyphicon-trash"></span><span class="hidden-xs"> Delete</span>
+                    </a>
+                </div>
+            </td>
+        </tr>
+    }*@
+</table>
