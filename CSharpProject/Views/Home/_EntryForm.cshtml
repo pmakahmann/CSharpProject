@@ -9,60 +9,60 @@
 
     <div class="row">
 
-        @*<div class="col-md-12">
+        <div class="col-md-12">
 
             <div class="form-group">
-                @Html.LabelFor()
-                @Html.TextBoxFor()
+                @Html.LabelFor(m => m.Name, new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.Name, new {@class = "form-control"})
             </div>
 
-            <div class="form-group">
-                @Html.LabelFor()
-                @Html.DropDownListFor()
-            </div>
+            @*<div class="form-group">
+                @Html.LabelFor(m => m.ColorId, new { @class = "control-label" })
+                @Html.DropDownListFor(m => m.ColorId, new { @class = "form-control" })
+            </div>*@
 
             <div class="form-group">
-                @Html.LabelFor()
-                @Html.DropDownListFor()
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor()
+                @Html.LabelFor(m => m.BloomSeason, new { @class = "control-label" })
                 <div>
                     <label class="radio-inline">
-                        @Html.RadioButtonFor()
+                        @Html.RadioButtonFor(m => m.BloomSeason,
+                            Entry.BloomSeasonValue.Early) @Entry.BloomSeasonValue.Early
                     </label>
 
                     <label class="radio-inline">
-                        @Html.RadioButtonFor()
-                    </label>
+                        @Html.RadioButtonFor(m => m.BloomSeason,
+                            Entry.BloomSeasonValue.Mid) @Entry.BloomSeasonValue.Mid
+                        </label>
+
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.BloomSeason,
+                            Entry.BloomSeasonValue.Late) @Entry.BloomSeasonValue.Late
+                        </label>
+
                 </div>
             </div>
 
             <div class="form-group">
-                @Html.LabelFor()
-                @Html.DropDownListFor()
+                @Html.LabelFor(m => m.Tetraploid, new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.Tetraploid, new { @class = "form-control" })
             </div>
 
             <div class="form-group">
-                @Html.LabelFor()
-                @Html.DropDownListFor()
+                @Html.LabelFor(m => m.Height, new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.Height, new { @class = "form-control" })
             </div>
 
             <div class="form-group">
-                @Html.LabelFor()
-                <div>
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor()
-                    </label>
-
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor()
-                    </label>
-                </div>
+                @Html.LabelFor(m => m.BloomSize, new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.BloomSize, new { @class = "form-control" })
             </div>
 
-        </div>*@
+            <div class="form-group">
+                @Html.LabelFor(m => m.Reblooms, new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.Reblooms, new { @class = "form-control" })
+            </div>
+  
+        </div>
 
         <div class="col-md-12">
             <div class="pad-top">

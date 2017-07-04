@@ -15,9 +15,7 @@ namespace CSharpProject.Models
         public enum BloomSeasonValue
         {
            Early,
-           EarlyMid,
            Mid,
-           MidLate,
            Late
         }
 
