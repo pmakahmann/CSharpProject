@@ -64,7 +64,7 @@ using CSharpProject.Models;
 
 //                TempData["Message"] = "Your entry was successfully added!";
 
-//                return RedirectToAction("Index");
+//                return RedirectToAction("Browse");
 //            }
 
 //            SetupActivitiesSelectListItems();
@@ -102,7 +102,7 @@ using CSharpProject.Models;
 
 //                TempData["Message"] = "Your entry was successfully updated!";
 
-//                return RedirectToAction("Index");
+//                return RedirectToAction("Browse");
 //            }
 
 //            SetupActivitiesSelectListItems();
@@ -134,17 +134,17 @@ using CSharpProject.Models;
 
 //            TempData["Message"] = "Your entry was successfully deleted!";
 
-//            return RedirectToAction("Index");
+//            return RedirectToAction("Browse");
 //        }
 
 //        private void ValidateEntry(Entry entry)
 //        {
-//            // If there aren't any "Duration" field validation errors
+//            // If there aren't any "Height" field validation errors
 //            // then make sure that the duration is greater than "0".
-//            if (ModelState.IsValidField("Duration") && entry.Duration <= 0)
+//            if (ModelState.IsValidField("Height") && entry.Duration <= 0)
 //            {
-//                ModelState.AddModelError("Duration",
-//                    "The Duration field value must be greater than '0'.");
+//                ModelState.AddModelError("Height",
+//                    "The Height field value must be greater than '0'.");
 //            }
 //        }
 
