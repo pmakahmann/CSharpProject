@@ -16,10 +16,11 @@
                 @Html.TextBoxFor(m => m.Name, new {@class = "form-control"})
             </div>
 
-            @*<div class="form-group">
+            <div class="form-group">
                 @Html.LabelFor(m => m.ColorId, new { @class = "control-label" })
-                @Html.DropDownListFor(m => m.ColorId, new { @class = "form-control" })
-            </div>*@
+                @Html.DropDownListFor(m => m.ColorId, 
+               (SelectList)ViewBag.ColorsSelectListItems, "", new { @class = "form-control" })
+            </div>
 
             <div class="form-group">
                 @Html.LabelFor(m => m.BloomSeason, new { @class = "control-label" })
@@ -44,8 +45,18 @@
 
             <div class="form-group">
                 @Html.LabelFor(m => m.Tetraploid, new { @class = "control-label" })
-                @Html.TextBoxFor(m => m.Tetraploid, new { @class = "form-control" })
-            </div>
+                <div>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.Tetraploid,
+                            Entry.TetraploidValue.Yes) @Entry.TetraploidValue.Yes
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.Tetraploid,
+                            Entry.TetraploidValue.No) @Entry.TetraploidValue.No
+                    </label>
+
+                    </div>
+                </div>
 
             <div class="form-group">
                 @Html.LabelFor(m => m.Height, new { @class = "control-label" })
@@ -58,9 +69,19 @@
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(m => m.Reblooms, new { @class = "control-label" })
-                @Html.TextBoxFor(m => m.Reblooms, new { @class = "form-control" })
-            </div>
+                @Html.LabelFor(m => m.Tetraploid, new { @class = "control-label" })
+                <div>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.Reblooms,
+                            Entry.RebloomsValue.Yes) @Entry.RebloomsValue.Yes
+                        </label>
+                        <label class="radio-inline">
+                            @Html.RadioButtonFor(m => m.Reblooms,
+                            Entry.RebloomsValue.No) @Entry.RebloomsValue.No
+                        </label>
+
+                    </div>
+                </div>
   
         </div>
 

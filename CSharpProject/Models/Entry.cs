@@ -19,6 +19,18 @@ namespace CSharpProject.Models
            Late
         }
 
+        public enum TetraploidValue
+        {
+           Yes,
+           No
+        }
+
+        public enum RebloomsValue
+        {
+            Yes,
+            No
+        }
+
         /// <summary>
         /// Default constructor.
         /// </summary>
@@ -38,7 +50,7 @@ namespace CSharpProject.Models
         /// <param name="bloomSize">Size of the daylily's bloom (in inches by .25 inch).</param>
         /// <param name="reblooms">Does the daylily rebloom, yes or no?</param>
 
-        public Entry(int id, string name, Color.ColorName colorName, BloomSeasonValue bloomSeason, bool tetraploid, double height, double bloomSize, bool reblooms)
+        public Entry(int id, string name, Color.ColorName colorName, BloomSeasonValue bloomSeason, TetraploidValue tetraploid, double height, double bloomSize, RebloomsValue reblooms)
         {
             Id = id;
             Name = name;
@@ -80,7 +92,7 @@ namespace CSharpProject.Models
         /// <summary>
         /// Tetraploid true or false.
         /// </summary>
-        public bool Tetraploid { get; set; }
+        public TetraploidValue Tetraploid { get; set; }
 
         /// <summary>
         /// The height of the daylily.
@@ -95,7 +107,7 @@ namespace CSharpProject.Models
         /// <summary>
         /// Does the daylily rebloom, true or false.
         /// </summary>
-        public bool Reblooms { get; set; }
+        public RebloomsValue Reblooms { get; set; }
 
 
     }
