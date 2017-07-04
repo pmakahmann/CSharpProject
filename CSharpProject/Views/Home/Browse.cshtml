@@ -21,7 +21,7 @@
      </tr>
 
 
-    @* Still issues with this
+    Still issues with this.  Possibly because there is no data
         
         @foreach (var entry in Model)
     {
@@ -29,11 +29,11 @@
             <td>
                 <span >@entry.Name</span>
             </td>
-            <td>@entry.Color.Name</td>
+            <td>@entry.Color</td>
             <td class="hidden-xs">@entry.BloomSeason</td>
             <td class="hidden-sm hidden-xs">@entry.Tetraploid</td>
-            <td>@entry.Height("0.0#")</td>
-            <td class="hidden-xs">@entry.BloomSize("0.0#")</td>
+            <td>@entry.Height.ToString("0.0#")</td>
+            <td class="hidden-xs">@entry.BloomSize.ToString("0.0#")</td>
             <td class="hidden-sm hidden-xs">@entry.Reblooms</td>
             <td>
                 <div class="pull-right">
@@ -46,5 +46,5 @@
                 </div>
             </td>
         </tr>
-    }*@
+    }
 </table>
