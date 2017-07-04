@@ -9,6 +9,17 @@ namespace CSharpProject.Models
     public class Entry
     {
 
+        public enum ColorValue
+        {
+            Yellow,
+            Red,
+            Orange,
+            Purple,
+            Green,
+            Brown,
+            White
+        }
+
         /// <summary>
         /// Bloom season.
         /// </summary>
@@ -50,11 +61,11 @@ namespace CSharpProject.Models
         /// <param name="bloomSize">Size of the daylily's bloom (in inches by .25 inch).</param>
         /// <param name="reblooms">Does the daylily rebloom, yes or no?</param>
 
-        public Entry(int id, string name, Color.ColorName colorName, BloomSeasonValue bloomSeason, TetraploidValue tetraploid, double height, double bloomSize, RebloomsValue reblooms)
+        public Entry(int id, string name, ColorValue color, BloomSeasonValue bloomSeason, TetraploidValue tetraploid, double height, double bloomSize, RebloomsValue reblooms)
         {
             Id = id;
             Name = name;
-            ColorId = (int)colorName;
+            Color = color;
             BloomSeason = bloomSeason;
             Tetraploid = tetraploid;
             Height = (int)height;
@@ -74,15 +85,15 @@ namespace CSharpProject.Models
         public string Name { get; set; }
 
         /// <summary>
-        /// The color ID for the daylily. The ID value should map to an ID in the color collection.
+        /// The color ID for the daylily.The ID value should map to an ID in the color collection.
         /// </summary>
-        [Display(Name = "Color")]
-        public int ColorId { get; set; }
+        //[Display(Name = "Color")]
+        //public int ColorId { get; set; }
 
         /// <summary>
         /// The color for the daylily.
         /// </summary>
-        public Color Color { get; set; }
+        public ColorValue Color { get; set; }
 
         /// <summary>
         /// The bloom season for the daylily.

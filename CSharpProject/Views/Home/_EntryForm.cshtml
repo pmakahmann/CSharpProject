@@ -16,11 +16,52 @@
                 @Html.TextBoxFor(m => m.Name, new {@class = "form-control"})
             </div>
 
-            <div class="form-group">
+            @*<div class="form-group">
                 @Html.LabelFor(m => m.ColorId, new { @class = "control-label" })
                 @Html.DropDownListFor(m => m.ColorId, 
                (SelectList)ViewBag.ColorsSelectListItems, "", new { @class = "form-control" })
-            </div>
+            </div>*@
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Color, new { @class = "control-label" })
+                <div>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.Color,
+                            Entry.ColorValue.Yellow) @Entry.ColorValue.Yellow
+                        </label>
+
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.Color,
+                            Entry.ColorValue.Red) @Entry.ColorValue.Red
+                        </label>
+
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.Color,
+                            Entry.ColorValue.Orange) @Entry.ColorValue.Orange
+                        </label>
+
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.Color,
+                            Entry.ColorValue.Purple) @Entry.ColorValue.Purple
+                        </label>
+
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.Color,
+                            Entry.ColorValue.Green) @Entry.ColorValue.Green
+                        </label>
+
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.Color,
+                            Entry.ColorValue.Brown) @Entry.ColorValue.Brown
+                        </label>
+
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(m => m.Color,
+                            Entry.ColorValue.White) @Entry.ColorValue.White
+                        </label>
+                    </div>
+                </div>
+
 
             <div class="form-group">
                 @Html.LabelFor(m => m.BloomSeason, new { @class = "control-label" })
