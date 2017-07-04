@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<CSharpProject.Models.Entry>
+
+@{
     ViewBag.Title = "Browse";
 }
 <h2>@ViewBag.Title.</h2>
@@ -9,25 +11,30 @@
 <table class="table">
     <tr>
         <th>Name</th>
-        <th>Primary Color</th>
-        <th>Secondary Color</th>
+        <th>Color</th>
         <th class="hidden-xs">Bloom Season</th>
         <th class="hidden-sm hidden-xs">Tetraploid</th>
         <th>Height (inches)</th>
-        <th class="hidden-xs">Bloom Size</th>
+        <th class="hidden-xs">Bloom Size (inches)</th>
         <th class="hidden-sm hidden-xs">Reblooms</th>
         <th>&nbsp;</th>
-    @*</tr>
-    @foreach (var entry in Model)
+     </tr>
+
+
+    @* Still issues with this
+        
+        @foreach (var entry in Model)
     {
         <tr>
             <td>
-                <span class="hidden-xs">@entry.Date.ToString("MM/dd/yyyy")</span>
-                <span class="hidden-sm hidden-md hidden-lg">@entry.Date.ToString("MM/dd")</span>
+                <span >@entry.Name</span>
             </td>
-            <td>@entry.Activity.Name</td>
-            <td>@entry.Duration.ToString("0.0#")</td>
-            <td class="hidden-xs">@entry.Intensity</td>
+            <td>@entry.Color.Name</td>
+            <td class="hidden-xs">@entry.BloomSeason</td>
+            <td class="hidden-sm hidden-xs">@entry.Tetraploid</td>
+            <td>@entry.Height("0.0#")</td>
+            <td class="hidden-xs">@entry.BloomSize("0.0#")</td>
+            <td class="hidden-sm hidden-xs">@entry.Reblooms</td>
             <td>
                 <div class="pull-right">
                     <a href="@Url.Action("Edit", new { id = entry.Id })" class="btn btn-warning btn-sm margin-right">
