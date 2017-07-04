@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -7,22 +8,17 @@ namespace CSharpProject.Models
 {
     public class Entry
     {
-        /// <summary>
-        /// Tetraploid true or false.
-        /// </summary>
-        public enum Tetraploid
-        {
-           Yes,
-           No
-        }
 
         /// <summary>
-        /// Reblooms true or false.
+        /// Bloom season.
         /// </summary>
-        public enum Reblooms
+        public enum BloomSeasonValue
         {
-           Yes,
-           No
+           Early,
+           EarlyMid,
+           Mid,
+           MidLate,
+           Late
         }
 
         /// <summary>
@@ -37,54 +33,72 @@ namespace CSharpProject.Models
         /// </summary>
         /// <param name="id">The ID for the entry.</param>
         /// <param name="name">String name of the daylily.</param>
-        /// <param name="primaryColor">Main color of the daylily.</param>
-        /// <param name="secondaryColor">Any secondary color contained on the daylily.</param>
+        /// <param name="colorName">Color of bloom (include primary and secondary on rebuild and refactoring.</param>
         /// <param name="bloomSeason">When the daylily blooms.</param>
+        /// <param name="tetraploid">Tetraploid yes or no.</param>
         /// <param name="height">Height of the daylily (in inches by .25 inch).</param>
         /// <param name="bloomSize">Size of the daylily's bloom (in inches by .25 inch).</param>
+        /// <param name="reblooms">Does the daylily rebloom, yes or no?</param>
 
-        //public Entry(int id, string name, Color.primaryColor primaryColor, Color.secondaryColor secondaryColor, bloomSeason bloomSeason, height height, bloomSize bloomSize)
-        //{
-        //    Id = id;
-        //    Name = name;
-        //    PrimaryColor = (int)primaryColor;
-        //    SecondaryColor = (int)secondaryColor;
-        //    BloomSeason= (int)bloomSeason;
-        //    Height = (int)height;
-        //    BloomSize = bloomSize;
+        public Entry(int id, string name, Color.ColorName colorName, BloomSeasonValue bloomSeason, bool tetraploid, double height, double bloomSize, bool reblooms)
+        {
+            Id = id;
+            Name = name;
+            ColorId = (int)colorName;
+            BloomSeason = bloomSeason;
+            Tetraploid = tetraploid;
+            Height = (int)height;
+            BloomSize = bloomSize;
+            Reblooms = reblooms;
 
-        //}
+        }
 
         /// <summary>
-        /// The ID of the entry.
+        /// The ID of the daylily.
         /// </summary>
         public int Id { get; set; }
 
         /// <summary>
-        /// The date of the entry. Should not include a time portion.
+        /// The name of the daylily.
         /// </summary>
-        public DateTime Date { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
-        /// The activity ID for the entry. The ID value should map to an ID in the activities collection.
+        /// The color ID for the daylily. The ID value should map to an ID in the color collection.
         /// </summary>
-        //[Display(Name = "Activity")]
-        //public int ActivityId { get; set; }
+        [Display(Name = "Color")]
+        public int ColorId { get; set; }
 
         /// <summary>
-        /// The activity for the entry.
+        /// The color for the daylily.
         /// </summary>
-        //public Activity Activity { get; set; }
+        public Color Color { get; set; }
 
         /// <summary>
-        /// The duration for the entry (in minutes).
+        /// The bloom season for the daylily.
         /// </summary>
-        public double Duration { get; set; }
+        public BloomSeasonValue BloomSeason { get; set; }
 
         /// <summary>
-        /// The level of intensity for the entry.
+        /// Tetraploid true or false.
         /// </summary>
-        //public IntensityLevel Intensity { get; set; }
+        public bool Tetraploid { get; set; }
+
+        /// <summary>
+        /// The height of the daylily.
+        /// </summary>
+        public double Height { get; set; }
+
+        /// <summary>
+        /// The bloom size the daylily.
+        /// </summary>
+        public double BloomSize { get; set; }
+
+        /// <summary>
+        /// Does the daylily rebloom, true or false.
+        /// </summary>
+        public bool Reblooms { get; set; }
+
 
     }
 }
